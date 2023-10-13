@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Extensions;
 using RaceTrack.RaceTrack.Cars;
 using RaceTrack.RaceTrack.Drivers;
 
@@ -62,11 +63,7 @@ namespace RaceTrack.RaceTrack
             foreach (var driver in Drivers)
             {
                 driver.Stop();
-                
-                //I chose to modify the provided EndRace method to call the StopEngine class from the driver's car,
-                //since the prompt clearly states that this method should be in the RaceCar abstract and not the 
-                //Driver abstract.
-                driver.Car.StopEngine();
+                driver.StopEngine();
             }
             Thread.Sleep(1000);
         }

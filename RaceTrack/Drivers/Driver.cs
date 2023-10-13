@@ -36,3 +36,15 @@ namespace RaceTrack.RaceTrack.Drivers
 
     }
 }
+
+namespace Extensions
+{
+    using RaceTrack.RaceTrack.Drivers;
+    public static class Extension
+    {
+        public static void StopEngine(this Driver driver)
+        {
+            Console.WriteLine($"{driver.Name} shuts off the {driver.Car.Name}'s engine.");
+        }
+    }
+}
